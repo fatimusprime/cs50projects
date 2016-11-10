@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+   
+    printf("How much change is owed?\n");
+    float amtOwed = GetFloat();
+   
+    do
+    {
+        if(amtOwed < 0)
+         {
+             printf("Please enter a positive number.\n");
+             amtOwed = GetFloat();
+         }
+    }
+    while (amtOwed < 0);
+    
+    int cOwed = amtOwed * 100;
+    int qrt = 25;
+    int dme = 10;
+    int nkl = 5;
+    int penn = 1;
+    int coincount = 0;
+
+    do
+    {
+     if (qrt <= cOwed)
+        {
+         coincount = coincount + 1;
+         cOwed = cOwed - qrt;
+        }
+     else if (dme <= cOwed)
+        {
+            coincount = coincount + 1;
+            cOwed = cOwed - dme;
+        }
+     else if (nkl <= cOwed)
+        {
+            coincount = coincount + 1;
+            cOwed = cOwed - nkl;
+        }
+     else if (penn <= cOwed)
+        {
+            coincount = coincount + 1;
+            cOwed = cOwed - penn;
+        }
+    }
+    while (cOwed > 0);
+
+    printf("%i\n", coincount);
+    
+}
