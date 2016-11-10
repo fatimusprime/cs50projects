@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    int height;
+    
+    
+    
+    do
+    {
+      printf("How high?\n");
+      
+       height = GetInt();
+       
+   //    if (height == 0)
+   //    {
+   //    printf("Zero is not allowed!\n");
+   //    height = GetInt();
+   //    }
+   //    else if(height < 0)
+  //    {
+   //    printf("Please enter a positive number!\n");
+   //    height = GetInt();
+   //    }
+       
+    }
+    while (height < 0 || height > 23);
+    
+    for (int line = 1; line <= height; line++)
+    {
+        for (int y = height - 1; y >= line; y--) 
+        {
+            printf(" ");
+        }  
+        
+        for (int x = 0; x <= line; x++) 
+        {
+            printf("#");
+        }    
+
+        printf("\n");
+    }
+
+}
