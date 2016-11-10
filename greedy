@@ -6,7 +6,8 @@ int main(void)
    
     printf("How much change is owed?\n");
     float amtOwed = GetFloat();
-   
+
+//validate user input  
     do
     {
         if(amtOwed < 0)
@@ -24,6 +25,7 @@ int main(void)
     int penn = 1;
     int coincount = 0;
 
+//perform checks
     do
     {
      if (qrt <= cOwed)
